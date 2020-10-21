@@ -1,26 +1,22 @@
-require('./config');
+const {port, consumer_key, consumer_secret, access_token_key, access_token_secret } = require('./config');
+
 const WebSocket = require('ws');
-const wss = new WebSocket.Server({ port: process.env.PORT });
+const wss = new WebSocket.Server({ port: port });
 const Twitter = require('twitter');
 
 
-let client = new Twitter({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token_key: process.env.TWITTER_TOKEN_KEY,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
- 
-let stream = client.stream('statuses/filter', {track: '#food'});
+let client = new Twitter({ consumer_key, consumer_secret, access_token_key, access_token_secret });
+
+let stream = client.stream('statuses/filter', { track: '#food' });
 
 wss.on('connection', function connection(ws) {
-    
-//    for (let index = 0; index < 5; index++) {
-//        setTimeout(() => {
-//            ws.send('counting'+index);       
-//        }, 2500);
-//    }
-    stream.on('data', function(event) {
+
+    //    for (let index = 0; index < 5; index++) {
+    //        setTimeout(() => {
+    //            ws.send('counting'+index);       
+    //        }, 2500);
+    //    }
+    stream.on('data', function (event) {
         ws.send(`
             tweet date: ${event.created_at}.
             tweet text: ${event.text}.
@@ -33,6 +29,6 @@ wss.on('connection', function connection(ws) {
 
 
 
-stream.on('error', function(error) {
+stream.on('error', function (error) {
     throw error;
 });
