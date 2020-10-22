@@ -1,0 +1,25 @@
+.twitter_feed{
+    margin-top: 8px;
+    .root {
+        flex-grow: 1;
+        margin: 0 auto;
+      }
+    
+    .paper {
+        margin-top: 8px;
+        padding: 8px;
+        width: inherit;
+        background: rgb(251, 251, 255);
+    }
+    
+    .image {
+        width: 128px;
+        height: 128px;
+    }
+    
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+}

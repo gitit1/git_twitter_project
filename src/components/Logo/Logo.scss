@@ -1,0 +1,17 @@
+@import '../../base';
+
+.Logo{
+    cursor: pointer;
+    img{
+        width: 24px;
+        height: 24px;
+        margin-left: 8px;
+        vertical-align: sub;
+    }
+    
+    span{
+        // font-family: 'Noto Sans KR', sans-serif;
+        font-family: $header-font-stack;
+        color: $twitter-color;
+    }
+}

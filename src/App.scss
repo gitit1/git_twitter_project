@@ -1,0 +1,200 @@
+@import './base';
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.wrapper {
+    display: flex;  
+    flex-flow: row wrap;
+    font-weight: bold;
+    text-align: center;
+  }
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 60px;
+    @extend %border-bottom;
+    display: flex;
+    flex: row wrap;
+
+    > * {
+        flex: 1 100%;
+      }
+
+    div{
+        display: inline-block;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        margin: 0 auto; 
+    }
+
+    .nav_left{
+        text-align: start;
+        .pagination, .streamingBtn, .refreshBtn{
+            margin-left: 15px;
+            .btn{
+                display: inline-block;
+                width: 55px;
+                height: 40px;
+                line-height: 40px;
+                border-radius: 8px;
+                vertical-align: middle;
+                background-color: $twitter-color;
+                box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
+                cursor: pointer;
+            
+                .MuiSvgIcon-root{
+                    position: relative;
+                    height: 40px;
+                    line-height: 40px;
+                    color: white;
+                }
+            }
+        }
+
+    }
+
+    .nav_middle{      
+        .logo{
+            vertical-align: sub;
+        }
+    }
+
+    .nav_right{
+        .search{
+            width: 90%;
+            height: 40px;
+            line-height: 40px;
+            vertical-align: middle;
+
+            background-color: rgb(230, 236, 240);
+            border-radius: 9999px;
+            .search_wrapper{
+                height: 40px;
+                line-height: 40px;
+                position: relative;
+                display: flex;
+    
+                &:focus-within {
+                    outline: none;
+                    background-color: #fff;
+                    border: 1px solid $twitter-color;
+                    border-radius: 9999px;
+
+                    .search_icon svg{
+                        color: $twitter-color
+                    }
+                }
+
+                > * {
+                    height: inherit;
+                    line-height: inherit;
+                }
+
+                .search_icon{
+                    margin-left: 8px;
+    
+                    svg{
+                        color: rgb(101, 119, 134);
+                        font-size: 22px;
+                        height: inherit;
+                    }
+                }
+    
+                .search_input{
+                    width: 95%;
+                    margin-left: 2px;
+                    input{
+                        line-height: inherit;
+                        text-align: left;
+                        width: inherit;
+                        height: inherit;
+                        border: none;
+                        background-color:inherit;
+                        font-family: $header-font-stack;
+                        letter-spacing: 0.5px;
+                        font-size: 16px;
+
+                        &:focus {
+                          outline: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+main{
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 61px;
+    position: relative;
+    min-height: calc(100vh - 60px - 5vh);
+    
+
+    .main_nav{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        @extend %border-bottom;
+        .pagination_numbers,
+        .server_status{
+            padding: 1px;
+            font-family: $header-font-stack;
+            color: $twitter-color;
+            font-size: 14px;
+        }
+    }
+    .error{
+        font-family: $header-font-stack;
+        color: $twitter-color;
+        position: relative;
+        top: 40%;
+        transform: translateY(-40%);
+    }
+}
+
+// footer {
+//     background: black;
+//     width: 100%;
+//     position: absolute;
+//     bottom: 0;
+//     height: 5vh;
+// }
+
+.disabled{
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+@media all and (max-width: 800px) {
+    header{
+        // margin: 0 auto;
+        min-height: 155px;
+        flex-direction: column;
+        .nav_middle{ order: 1; }
+        .nav_left{ order: 2; }
+        .nav_right{ order: 3; }
+        div{
+            margin: 0;
+            height: 35px;
+        }
+        .nav_middle{
+            width: 100%;
+        }
+    }
+
+    main{
+        // height: inherit;
+        margin-top: 156px;
+        min-height: calc(100vh - 155px - 5vh);
+    }
+}
