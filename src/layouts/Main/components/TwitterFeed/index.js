@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Grid } from '@material-ui/core';
 import ReactPlayer from "react-player";
 import './TwitterFeed.scss';
-import 'react-image-lightbox/style.css';
 
 class TwitterFeed extends Component {
 
