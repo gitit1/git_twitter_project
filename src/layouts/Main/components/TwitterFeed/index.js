@@ -36,7 +36,7 @@ class TwitterFeed extends Component {
                 return (
                 <ReactPlayer url={media.video_info['variants'][0].url}
                     playsinline={true}
-                    playing={true}
+                    playing={false}
                     controls={true}
                     loop={true}>
                 </ReactPlayer> )
