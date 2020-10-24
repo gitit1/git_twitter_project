@@ -1,0 +1,9 @@
+@import '../../base';
+
+.error_message{
+    font-family: $header-font-stack;
+    color: $twitter-color;
+    position: relative;
+    top: 40%;
+    transform: translateY(-40%);
+}

@@ -1,0 +1,42 @@
+@import '../../base';
+
+main{
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 61px;
+    position: relative;
+    min-height: calc(100vh - 60px - 5vh);
+    z-index: 0;
+
+    .main_nav{
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-between;
+        @extend %border-bottom;
+        .pagination_numbers,
+        .notifications{
+            padding: 1px;
+            font-family: $header-font-stack;
+            color: $twitter-color;
+            font-size: 14px;
+        }
+    }
+}
+
+@media all and (max-width: 850px) {
+    main{
+        width: 98%;
+        margin-top: 156px;
+        min-height: calc(100vh - 155px);
+    }
+}
+
+@media all and (max-width: 600px) {
+    main{
+        width: 98%;
+        .main_nav .notifications{
+            display: none;
+        }
+    }
+}

@@ -1,11 +1,11 @@
 import React from 'react';
-import twitterImg from './twitter.png';
+import twitterImg from '../../assets/twitter.png';
 import './Loader.scss'
 
 const Loader = () => {   
     return(
         <div className='loader'>
-            <img src={twitterImg} alt="Loading"/>
+            <img src={twitterImg} alt="Loading..."/>
         </div>
     )
 };

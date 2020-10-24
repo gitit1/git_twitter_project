@@ -1,0 +1,30 @@
+.main_nav{
+    font-weight: 400;
+    .server_status{
+        .online{ color: #00720f; fill: #00720f};
+        .offline{ color: #af0606; fill: #af0606};
+        span::first-letter{
+            text-transform: uppercase;
+        }
+        svg{
+            font-size: 12px;
+            vertical-align: middle;
+            &.blink {
+                animation: blinker 1.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+            }
+
+        }
+    }
+    .streaming_status{
+        
+        .dot{  
+            animation: 2s blink infinite;
+            &.dot:nth-child(2) { animation-delay: 250ms }
+            &.dot:nth-child(3) { animation-delay: 500ms} 
+        }
+    }
+    .paused, .mode {font-weight: 700;}
+}
+
+@keyframes blinker {from { opacity: 1; } to { opacity: 0; }}
+@keyframes blink {50% { color: transparent }}

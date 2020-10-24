@@ -1,10 +1,10 @@
 import React from 'react';
-import twitterImg from './twitter.png';
+import twitterImg from '../../../../assets/twitter.png';
 import './Logo.scss'
 
 const Logo = () => {   
     return(
-        <div className='Logo'>
+        <div className='logo'  onClick={() => window.location.reload()}>
             <img src={twitterImg} alt="Logo"/>
             <span>GrubHub Twitter Assignment</span>
         </div>

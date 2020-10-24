@@ -1,6 +1,6 @@
-@import '../../base';
+@import '../../../../base';
 
-.Logo{
+.logo{
     cursor: pointer;
     img{
         width: 24px;
@@ -10,7 +10,6 @@
     }
     
     span{
-        // font-family: 'Noto Sans KR', sans-serif;
         font-family: $header-font-stack;
         color: $twitter-color;
     }
