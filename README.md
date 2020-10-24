@@ -1,4 +1,4 @@
-# git_twitter_project
+# git_twitter_streamer
 
 This Mini Project was made as an Home Assignment to one of the companies I interviewed for.
 
