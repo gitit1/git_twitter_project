@@ -1,24 +1,20 @@
 {
-  "name": "grubhub_twitter",
-  "version": "0.1.0",
+  "name": "git-twitter-streamer",
+  "version": "2.0.0",
+  "description": "Twitter Streamer Project",
   "private": true,
+  "author": "Gitit Regev",
   "dependencies": {
     "@material-ui/core": "^4.0.0",
     "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "cli-color": "^2.0.0",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "http": "0.0.1-security",
     "node-sass": "^4.14.1",
-    "nodemon": "^2.0.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-player": "^2.6.2",
     "react-scripts": "^3.4.4",
-    "twit": "^2.2.11",
     "ws": "^7.3.1"
   },
   "scripts": {

@@ -1,0 +1,24 @@
+{
+  "name": "git-twitter-streamer",
+  "version": "1.0.0",
+  "description": "Twitter Streamer Project",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gitit Regev",
+  "license": "ISC",
+  "dependencies": {
+    "cli-color": "^2.0.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http": "0.0.1-security",
+    "twit": "^2.2.11",
+    "ws": "^7.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
