@@ -1,0 +1,42 @@
+@import '../../../../../../../base';
+
+.twitter_data_section_text{
+    width: 98%;
+    text-align: left;
+    color: rgb(20, 23, 26);
+    overflow-wrap: break-word;
+    padding: 10px;
+    div{
+        overflow: overlay;
+        line-height: 1.3125;
+        font-size: 15px;
+        font-weight: 400;
+    }
+    a{
+        color: $twitter-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 900px) {
+    .twitter_data_section_text{
+        width: 90%;    
+        div{
+            line-break: auto;
+            overflow: auto;
+        }
+    }
+}
+
+
+@media all and (max-width: 500px) {
+    .twitter_data_section_text{
+        width: 90%;
+        margin-left: 7%;
+        div{
+            line-break: auto;
+            overflow: auto;
+        }
+    }    
+}

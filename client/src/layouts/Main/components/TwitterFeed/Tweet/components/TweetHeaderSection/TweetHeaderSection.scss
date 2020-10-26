@@ -1,0 +1,28 @@
+@import '../../../../../../../base';
+
+.twitter_data_section_header{
+    padding: 10px;
+    color: rgb(20, 23, 26);
+    font-size: 15px;
+    white-space: nowrap;
+    line-height: 1.3125;
+
+    .twitter_data_user_handler{
+        margin-left: 6px;
+    }
+    .twitter_data_user_handler, .twitter_data_date{
+        font-family: $header-font-stack;
+        color: rgb(101, 119, 134);
+        font-weight: 400;
+        font-size: 14px;
+    }
+    .twitter_data_date{
+        float: right;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .twitter_data_section_header{
+        justify-content: space-around;
+    }
+}

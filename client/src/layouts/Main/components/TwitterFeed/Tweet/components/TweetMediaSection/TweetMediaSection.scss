@@ -1,0 +1,94 @@
+@import '../../../../../../../base';
+
+.twitter_data_section_media{
+    padding: 8px;
+    .twitter_data_section_media_item_container{
+        outline-style: none;
+        border-radius: 16px;
+        border-color: rgb(204, 214, 221);
+        border-width: 1px;
+        border-style: solid;
+        overflow: hidden;
+        width: $tweet-image-width;
+        height: $tweet-image-height;
+        margin-bottom: 10px;
+
+        .tweet_img{
+            width: inherit;
+            height: inherit;
+            position: relative;
+            transform: translateZ(0px);
+
+            video{
+                cursor: pointer;
+                contain: strict;
+                width: inherit; 
+                height: inherit!important; 
+                position: absolute;  
+                top: 0%; 
+                left: 0%; 
+                transform: rotate(0deg) scale(1.005);
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                position: relative;
+                top: 0%; 
+                left: 0%; 
+                transform: rotate(0deg) scale(1.005);
+            }
+        }
+        .data_images_order_1{
+            height: 270px;  
+        }
+        .data_images_order_2{
+            display: flex;
+            justify-content: space-between;
+            .image_1, .image_2{
+                width: 238px; height: 270px;
+                img{
+                    width: 99%;
+                    height: 100%;
+                }   
+            }
+        }
+        .data_images_order_3{
+            display: flex;
+            justify-content: space-between;
+            .image_1{
+                width: 238px; height: 270px;
+                img{
+                    width: 99%;
+                    height: 100%;
+                }                         
+            }
+            .image_2, .image_3{
+                width: 238px;
+                height: 140px;
+                img{
+                    width: 99%;
+                    height: 98%;
+                }                           
+            }
+
+        }
+        .data_images_order_4{ 
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            .tweet_img {
+                width: 238px;
+                height: 140px;
+                img{
+                    object-fit: fill;
+                    width: 99%;
+                    height: 98%;                          
+                } 
+            }
+        }
+    }
+    
+
+
+}
