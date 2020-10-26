@@ -18,19 +18,30 @@ let twitter = new Twit({ consumer_key,
 });
 
 const SERCH_TERM = '#food';
+let stream = twitter.stream('statuses/filter', { track: SERCH_TERM });
+
 
 wss.on('connection', function connection(ws) {
-    console.log(clc.cyan('[new connect detected]'))
+    console.log(clc.xterm(28).bgXterm(7)('[WS] New Client Connection'));
+
+    if (wss.clients.size===1) {
+        console.log(clc.xterm(178).bgXterm(39)('[Twitter API]- Restarting the Stream'));
+        stream.start();
+    } 
 });
 
-let stream = twitter.stream('statuses/filter', { track: SERCH_TERM });
 stream.on('error', function (error) {
-    console.log(clc.red('error on streaming:',error))
+    console.log(clc.xterm(196).bgXterm(39)(`[Twitter API] Error on Streaming: ${error}`))
 });
 
 stream.on('tweet', function (tweet) {
-    console.log(clc.blackBright('[got new tweet]',tweet.id));
-
+    console.log(clc.blackBright.bgXterm(39)(`[Twitter API] Recieved New Tweet: ${tweet.id}]`));
+    if(wss.clients.size===0){
+        preConnect = 0;
+        console.log(clc.xterm(196).bgXterm(7)('[WS] No Clients Connected'));
+        console.log(clc.xterm(196).bgXterm(39)('[Twitter API] Stopping the Stream'));
+        stream.stop();
+    }
     wss.clients.forEach(function each(client) {
         if (client.readyState === WebSocket.OPEN) {
             const tweet_id = tweet.id;
