@@ -29,14 +29,14 @@ const convertMediaToHTML = (media) => {
 }
 
 
-const TweetMediaSection = ({ tweetMediaData }) => {
+const TweetMediaSection = ({ tweetMediaData, tweetId }) => {
 
     return (
         <Grid container className='twitter_data_section_media' direction="row" justify="flex-start">
             <div className={`twitter_data_section_media_item_container`}>
                 <div className={`data_images_order_${tweetMediaData.length}`}>
-                    {tweetMediaData.length !== 3 && tweetMediaData.map((media, index) => (//3 images has special stracture 
-                        <div className={`tweet_img image_${index + 1}`}>{convertMediaToHTML(media)}</div>
+                    {tweetMediaData.length !== 3 && tweetMediaData.map((media, imgIndex) => (//3 images has special stracture 
+                        <div className={`tweet_img image_${imgIndex + 1}`} key={`${tweetId}-${imgIndex}`}>{convertMediaToHTML(media)}</div>
 
                     ))}
                 </div>

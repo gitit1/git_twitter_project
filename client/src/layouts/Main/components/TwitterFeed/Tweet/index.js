@@ -19,7 +19,7 @@ const Tweet = ({ tweet, feedLength, index }) => {
             <Grid item xs={11} className='twitter_data_section'>
                 <TweetHeaderSection userName={tweet.user_name} handler={tweet.user_handler} date={tweet.tweet_date}/>
                 <TweetTextSection tweetTextData={tweet.tweet_text} tweetLinks={tweet.tweet_links} hasMedia={hasMedia}/>
-                {tweet.tweet_media && tweet.tweet_media.length > 0 && <TweetMediaSection tweetMediaData={tweet.tweet_media}/>}
+                {tweet.tweet_media && tweet.tweet_media.length > 0 && <TweetMediaSection tweetMediaData={tweet.tweet_media} tweetId={tweet.tweet_id}/>}
             </Grid>
         </Grid>
     )

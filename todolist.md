@@ -5,7 +5,7 @@
 - [X] **Design:** finish designing box of tweets
 - [X] **Design:** text seperate and rebuild so it will be more nice to the eye (TODO: NEEDS MORE TESTINGS TO FINE TUNE IT)
 - [X] **Design:** Add twitter favicon
-- [] **Code Cleaness:** reorder tweet feed code
+- [#] **Code Cleaness:** reorder tweet feed code
 - []  **Design:** Lightbox for the images
 - [] **Design:** tweeter poll
 - [] **Design:** Tweeter Feed -Handle RT - needs inside box
@@ -21,8 +21,10 @@
 - [] Tweeter Feed - tweeter poll
 - []  Code Lightbox for the images
 
+
 #### Other
 - []  Add more tests!
 - [X] Docker
 - [X] Redesign to folders and neat code
 - [X] Status line: design as i want (animation)
+- [X] deal with missing jkey error on twiter feed component

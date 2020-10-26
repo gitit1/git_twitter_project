@@ -7,35 +7,36 @@ const convertTextMsgToHTML = (text, linksArray) => {
         const linkIndex = linksArray.find(link => link.url === text);
         const newLink = linkIndex && linkIndex.expanded_url ? linkIndex.display_url : linksArray[0].expanded_url
 
-        return <a className='tweeter_link' target='_blank' rel="noopener noreferrer" href={text}>{newLink}</a>
+        return `<a target='_blank' rel='noopener noreferrer' href='${text}'>${newLink}</a>`
     }
-    if (text === '<br/>') { return <br /> }
+    // if (text === '<br/>') { return <br /> }
     if (text.charAt(0) === '#') {
-        return <a className='tweeter_link' target='_blank' rel="noopener noreferrer" href={`https://twitter.com/search?q=${text.replace(text.charAt(0), '%23')}`}>{text} </a>
+        return `<a target='_blank' rel='noopener noreferrer' href="https://twitter.com/search?q=${text.replace(text.charAt(0), '%23')}"}>${text} </a>`
     }
     if (text.charAt(0) === '@') {
-        return <a className='tweeter_link' target='_blank' rel="noopener noreferrer" href={`https://twitter.com/search?q=${text.replace(text.charAt(0), '%40')}`}>{text} </a>
+        return `<a target='_blank' rel='noopener noreferrer' href={"https://twitter.com/search?q=${text.replace(text.charAt(0), '%40')}"}>${text} </a>`
     }
     return `${text.replace('&gt;', '>')} `;
 }
 
+const buildHtml = (textAsObject, hasLinks,hasMedia, tweetLinks) => {
+    let data = '';
+    textAsObject.map((t, index) => (
+        data = !(!hasLinks && t.includes('https://')) &&
+        !(hasMedia && (index + 1 === textAsObject.length)) &&
+        data + convertTextMsgToHTML(t, tweetLinks)
+    ))
+    return data
+}
 
 const TweetTextSection = ({ tweetTextData, tweetLinks, hasMedia }) => {
     const textAsObject = tweetTextData.replace(/[\n\r]/g, ' <br/> ').split(' ');
     const hasLinks = tweetLinks !== undefined && tweetLinks.length > 0;
-
+    
     return (
         <Grid container className='twitter_data_section_text'>
             {tweetTextData && (
-                <div>
-                    {
-                        textAsObject.map((t, index) => (
-                            !(!hasLinks && t.includes('https://')) &&
-                            !(hasMedia && (index + 1 === textAsObject.length)) &&
-                            convertTextMsgToHTML(t, tweetLinks)
-                        ))
-                    }
-                </div>
+                <div dangerouslySetInnerHTML={{__html: buildHtml(textAsObject, hasLinks, hasMedia, tweetLinks)}}></div>
             )}
         </Grid>
     )
