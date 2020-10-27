@@ -23,6 +23,12 @@
 
 @media all and (max-width: 500px) {
     .twitter_data_section_header{
+        margin-left: 20px;
         justify-content: space-around;
+        white-space: normal;
+        text-align: left;
+        .twitter_data_date{
+            text-align: left;
+        }
     }
 }
