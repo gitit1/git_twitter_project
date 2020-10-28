@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Header from './layouts/Header'
-import Main from './layouts/Main'
+import Header from './layouts/Header';
+import Main from './layouts/Main';
 
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
@@ -91,13 +91,13 @@ class App extends Component {
     const lastPage = tweetsCurrentArray.length > 0 ? Math.ceil(tweetsCurrentArray.length / pagination.limit) : 1;
 
     return (
-      <div className='wrapper'>
-        <Header flags={flags} pagination={pagination}
-                lastPage={lastPage} tweetsArray={tweetsArray} toggleStreaming={this.toggleStreaming}
-                handlePagination={this.handlePagination} checkServerStatus={this.checkServerStatus}
-                handleSearch={this.handleSearch} cancelSearch={this.cancelSearch} />
-        <Main   flags={flags} pagination={pagination} tweetsCurrentArray={tweetsCurrentArray} lastPage={lastPage}/>
-      </div>
+        <div className='wrapper'>
+          <Header flags={flags} pagination={pagination}
+                  lastPage={lastPage} tweetsArray={tweetsArray} toggleStreaming={this.toggleStreaming}
+                  handlePagination={this.handlePagination} checkServerStatus={this.checkServerStatus}
+                  handleSearch={this.handleSearch} cancelSearch={this.cancelSearch} />
+          <Main   flags={flags} pagination={pagination} tweetsCurrentArray={tweetsCurrentArray} lastPage={lastPage}/>
+        </div>
     )
   }
 }

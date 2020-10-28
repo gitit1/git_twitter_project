@@ -18,9 +18,8 @@
             height: inherit;
             position: relative;
             transform: translateZ(0px);
-
+            cursor: pointer;
             video{
-                cursor: pointer;
                 contain: strict;
                 width: inherit; 
                 height: inherit!important; 
