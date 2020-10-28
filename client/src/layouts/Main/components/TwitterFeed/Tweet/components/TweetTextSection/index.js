@@ -9,7 +9,6 @@ const convertTextMsgToHTML = (text, linksArray) => {
 
         return `<a target='_blank' rel='noopener noreferrer' href='${text}'>${newLink}</a>`
     }
-    // if (text === '<br/>') { return <br /> }
     if (text.charAt(0) === '#') {
         return `<a target='_blank' rel='noopener noreferrer' href="https://twitter.com/search?q=${text.replace(text.charAt(0), '%23')}"}>${text} </a>`
     }
@@ -23,8 +22,8 @@ const buildHtml = (textAsObject, hasLinks,hasMedia, tweetLinks) => {
     let data = '';
     textAsObject.map((t, index) => (
         data = !(!hasLinks && t.includes('https://')) &&
-        !(hasMedia && (index + 1 === textAsObject.length)) &&
-        data + convertTextMsgToHTML(t, tweetLinks)
+        !(hasMedia && (index + 1 === textAsObject.length)) ?
+        data + convertTextMsgToHTML(t, tweetLinks) : data
     ))
     return data
 }
