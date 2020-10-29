@@ -8,10 +8,12 @@ services:
             - ./app/node_modules
             - ./client/:/app
         ports: 
-            - '3000:3010'
+            - 3001:3000
         restart: on-failure
         container_name: client
         tty: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
     server:
         build: 
             context: ./server
@@ -20,6 +22,7 @@ services:
             - '3020:3020'
         restart: on-failure
         container_name: server
+        tty: true
         volumes: 
             - /app/node_modules
             - ./server/:/app

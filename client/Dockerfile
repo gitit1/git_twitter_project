@@ -1,14 +1,16 @@
-FROM node:latest
+FROM node:13.12.0-alpine
 
 WORKDIR /app
 
-COPY package*.json ./
+ENV PATH /app/node_modules/.bin:$PATH
+
+COPY package.json ./
+COPY package-lock.json ./
 
 RUN npm install node-sass@latest
-
 RUN npm rebuild node-sass
-
 RUN npm install
+RUN npm install react-scripts
 
 COPY . .
 
