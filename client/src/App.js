@@ -33,7 +33,7 @@ class App extends Component {
   }
 
   componentDidMount() { this.checkServerStatus(); }
-
+  componentWillUnmount(){this.ws.onconnection = () => {this.ws.close()};}
   checkServerStatus = () => {
     this.setState({ flags: { isLoading: true } });
     this.ws = new WebSocket(wsUrl);
