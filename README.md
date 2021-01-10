@@ -2,7 +2,7 @@
 
 **http://git_twitter_streamer.gititregev.com/**
 
-## Based on this instructions:
+## Based on those instructions:
 
 ### Goal
 Create a web application that displays a live feed tweets containing #food hashtags.
