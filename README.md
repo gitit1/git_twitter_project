@@ -1,7 +1,5 @@
 # git_twitter_streamer
 
-This Mini Project was made as an Home Assignment to one of the companies I interviewed for.
-
 **http://git_twitter_streamer.gititregev.com/**
 
 ## Based on this instructions:
