@@ -6,7 +6,7 @@ const Logo = () => {
     return(
         <div className='logo'  onClick={() => window.location.reload()}>
             <img src={twitterImg} alt="Logo"/>
-            <span>GrubHub Twitter Assignment</span>
+            <span>Git's Twitter Streamer</span>
         </div>
     )
 };
