@@ -10,7 +10,7 @@ const isLocalhost = Boolean(
   )
 );
 
-const wsUrl = isLocalhost ? 'ws://localhost:3020' : 'ws://git_twitter_streamer.gititregev.com:3020';
+const wsUrl = isLocalhost ? 'ws://localhost:3020' : 'ws://git_twitter_streamer.gititregev.info:3020';
 
 const PAGINATION_LIMIT_DEFAULT = 5;
 

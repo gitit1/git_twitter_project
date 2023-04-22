@@ -1,6 +1,6 @@
 # git_twitter_streamer
 
-**http://git_twitter_streamer.gititregev.com/**
+**http://git_twitter_streamer.gititregev.info/**
 
 ## Based on those instructions:
 
